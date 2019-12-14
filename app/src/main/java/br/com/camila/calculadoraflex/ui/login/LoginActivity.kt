@@ -8,7 +8,9 @@ import android.widget.Toast
 import br.com.camila.calculadoraflex.R
 import br.com.camila.calculadoraflex.ui.form.FormActivity
 import br.com.camila.calculadoraflex.ui.signup.SignUpActivity
+import br.com.camila.calculadoraflex.utils.DatabaseUtil
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.iid.FirebaseInstanceId
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity() {
@@ -48,10 +50,15 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun goToHome() {
+        FirebaseInstanceId.getInstance().instanceId.addOnSuccessListener(this) { instanceIdResult ->
+            val newToken = instanceIdResult.token
+            DatabaseUtil.saveToken(newToken)
+        }
         val intent = Intent(this, FormActivity::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         startActivity(intent)
         finish()
+
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

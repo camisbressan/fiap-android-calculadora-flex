@@ -42,7 +42,7 @@ class ResultActivity : AppCompatActivity() {
             tvSuggestion.text = getString(R.string.gasoline)
         }
         tvEthanolAverageResult.text = (ethanolPrice / ethanolAverage).format(2)
-        tvGasAverageResult.text = (ethanolPrice / ethanolAverage).format(2)
+        tvGasAverageResult.text = (gasPrice / gasAverage).format(2)
         tvFuelRatio.text =
             getString(R.string.label_fuel_ratio,performanceOfMyCar.format(2))
     }

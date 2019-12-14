@@ -10,7 +10,7 @@
 
 
         <ImageView
-                style="@style/banner"/>
+                style="@style/banner" android:id="@+id/ivBanner"/>
 
         <View style="@style/divider"/>
 

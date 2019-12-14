@@ -10,12 +10,14 @@ import br.com.camila.calculadoraflex.model.CarData
 import br.com.camila.calculadoraflex.ui.login.LoginActivity
 import br.com.camila.calculadoraflex.ui.result.ResultActivity
 import br.com.camila.calculadoraflex.utils.DatabaseUtil
+import br.com.camila.calculadoraflex.utils.RemoteConfig
 import br.com.camila.calculadoraflex.watchers.DecimalTextWatcher
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_form.*
 
 class FormActivity : AppCompatActivity() {
@@ -28,6 +30,7 @@ class FormActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_form)
+        loadBanner()
         mAuth = FirebaseAuth.getInstance()
         userId = FirebaseAuth.getInstance().currentUser?.uid ?: ""
         listenerFirebaseRealtime()
@@ -103,5 +106,11 @@ class FormActivity : AppCompatActivity() {
         etEthanolPrice.setText(defaultClearValueText)
         etGasAverage.setText(defaultClearValueText)
         etEthanolAverage.setText(defaultClearValueText)
+    }
+
+    private fun loadBanner() {
+        val loginBanner = RemoteConfig.getFirebaseRemoteConfig()
+            .getString("banner_image")
+        Picasso.get().load(loginBanner).into(ivBanner)
     }
 }
