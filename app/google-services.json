@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "567788167200",
+    "firebase_url": "https://calculadoraflex-camila.firebaseio.com",
+    "project_id": "calculadoraflex-camila",
+    "storage_bucket": "calculadoraflex-camila.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:567788167200:android:77a4884b8cd6f5cac4dc45",
+        "android_client_info": {
+          "package_name": "br.com.camila.calculadoraflex"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "567788167200-63t8ilcbljid4j5tko40pasneh17lm69.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.camila.calculadoraflex",
+            "certificate_hash": "80d7aba3af0f29d89e62871ba62e18dd32e7bd9f"
+          }
+        },
+        {
+          "client_id": "567788167200-qju170b76glq97e1qdkgij182e2abmq0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABZvjuWP0sxjad8J-ET-ndg_cXvrxy-WA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "567788167200-qju170b76glq97e1qdkgij182e2abmq0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
